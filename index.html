@@ -540,78 +540,48 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;backgroun
     <div class="blog-wrap">
       <div class="blog-hero">
         <div class="blog-tag">Methodology</div>
-        <h1 class="blog-title">How I Screen Stocks: A Data-Driven Approach to Finding Investment Opportunities</h1>
+        <h1 class="blog-title">How I Built a Stock Screener as a Finance Sophomore Who Had No Idea How to Code</h1>
         <div class="blog-meta">
           <span>By Ishan Singh</span>
           <span>·</span>
-          <span>8 min read</span>
+          <span>Rising Sophomore, Santa Clara University</span>
+          <span>·</span>
+          <span>7 min read</span>
         </div>
       </div>
       <hr class="blog-divider">
       <div class="blog-body">
-        <p>Finding a promising stock is easy. Finding a promising stock <strong>systematically</strong> is much harder.</p>
-        <p>With thousands of publicly traded companies available to investors, manually analyzing every company is impossible. That is why I built my stock-screening methodology around a simple idea: <strong>use data to narrow the universe of stocks before spending time on deeper research.</strong></p>
-        <p>My stock screener is designed to identify companies that stand out across financial performance, valuation, growth, profitability, and market characteristics. The goal is not to tell investors exactly what to buy. Instead, it creates a structured starting point for answering a more important question:</p>
-        <blockquote><strong>Which companies deserve a closer look?</strong></blockquote>
+        <p>I am going into my sophomore year at Santa Clara University studying finance, and I am pretty much surrounded by financial energy every single day. Silicon Valley is literally outside my door. I drive past VC firms, walk by tech campuses, and sit in finance classes where the conversation almost always comes back to the same question: how do you actually find a good investment?</p>
+        <p>That question started bothering me earlier this year. Not in a theoretical way. In a practical, I-want-to-figure-this-out-for-real way. So I built a stock screener. And I want to walk you through why I built it, what it actually does, and what I learned along the way.</p>
 
-        <h2>1. Start With the Numbers</h2>
-        <p>The first step in my process is quantitative screening. A company's stock price alone tells us very little about whether the underlying business is attractive. Instead, I look at financial and valuation metrics that provide insight into the company's performance and expectations.</p>
-        <p>Some of the factors I consider include:</p>
-        <ul>
-          <li>Revenue growth</li><li>Earnings growth</li><li>Profit margins</li><li>Return on equity</li>
-          <li>Price-to-earnings ratio</li><li>Price-to-sales ratio</li><li>Debt levels</li>
-          <li>Free cash flow</li><li>Market capitalization</li><li>Recent stock performance</li>
-        </ul>
-        <p>Each metric tells a different part of the story. For example, a company with strong revenue growth may look attractive at first glance. But if that growth comes with declining margins and increasing debt, the investment case becomes more complicated. The purpose of screening is therefore not to find a single "perfect" metric — it is to identify companies that demonstrate strength across multiple dimensions.</p>
+        <h2>Why a screener in the first place</h2>
+        <p>There are thousands of publicly traded companies out there. Even if you just look at the S&P 500, you still have 500 companies to go through. Nobody has time to read every annual report, check every earnings call, and compare every valuation manually. That is just not realistic, especially as a student with a full course load.</p>
+        <p>What a screener does is pretty simple. It runs a set of criteria across a large universe of stocks and hands you back a shorter list of companies actually worth looking at. Think of it as the first filter before the real research even starts.</p>
+        <p>My finance coursework at SCU has covered the fundamentals well. Financial statements, valuation models, market theory. But the classroom keeps things clean and organized. Real markets are messy. There are hundreds of variables, conflicting signals, and no professor telling you which number to trust. I wanted to build something that forced me to make those calls myself.</p>
 
-        <h2>2. Growth Matters — but Quality Matters Too</h2>
-        <p>One of the biggest mistakes investors can make is focusing exclusively on growth. A company growing revenue at 30% annually sounds impressive. But investors should also ask:</p>
-        <ul>
-          <li><strong>How profitable is that growth?</strong></li>
-          <li><strong>Is the company generating cash?</strong></li>
-          <li><strong>Can the growth continue?</strong></li>
-          <li><strong>How much is the market already paying for it?</strong></li>
-        </ul>
-        <p>This is why my methodology considers growth alongside profitability and valuation. A high-growth company trading at an extremely high valuation may carry substantially more risk than a similarly strong company trading at a more reasonable valuation. The screener is designed to help identify that distinction.</p>
+        <h2>The ten metrics I use and why</h2>
+        <p>The screener runs on ten metrics. I did not just pick these randomly. Each one is trying to answer a specific question about a company.</p>
+        <p><strong>Revenue growth</strong> tells you whether the business is actually getting bigger. <strong>Earnings per share growth</strong> tells you whether it is getting more profitable, not just bigger. The <strong>P/E ratio</strong> puts a price on those earnings and lets you compare companies side by side. The <strong>PEG ratio</strong> takes the P/E and adjusts it for growth rate, which is something Peter Lynch talked about a lot. <strong>Free cash flow</strong> is personally my favorite number on the sheet because it is harder to manipulate than reported earnings. <strong>Return on equity</strong> shows how efficiently management is using shareholder money. <strong>Debt to equity</strong> tells you how much risk is sitting on the balance sheet. <strong>Beta</strong> measures how volatile the stock is relative to the broader market. <strong>Relative strength</strong> looks at price momentum over recent months. And <strong>dividend yield</strong> tells you what income you get just for holding the stock.</p>
+        <p>When I put all of these together into a composite score, I am asking the same set of questions for every company and ranking them by how well they answer. It is not perfect. Nothing in investing is. But it gives me a real starting point instead of just going off gut feeling or whatever is trending on social media.</p>
 
-        <h2>3. Valuation Provides Context</h2>
-        <p>A great company is not automatically a great investment at any price. Valuation is one of the most important parts of my screening process because it provides context for what investors are currently paying for a company's financial performance.</p>
-        <p>For example, the price-to-earnings ratio can help investors compare the market value of a company with its earnings. Other valuation measures, such as price-to-sales or price-to-free-cash-flow, can provide additional perspectives — particularly when comparing companies with different profitability profiles.</p>
-        <p>However, valuation should always be considered relative to the company's industry and growth prospects. A P/E ratio that looks expensive for a mature company may be reasonable for a rapidly growing business. <strong>The number itself is not the conclusion. The context surrounding the number matters.</strong></p>
+        <h2>Building this with zero coding background</h2>
+        <p>I came into SCU with genuinely no programming experience. My background was Bellarmine, some Excel work, a lot of reading, and a general interest in markets. Coding was not part of my toolkit at all.</p>
+        <p>This summer I have been interning at Achronix Semiconductor, which is a chip company in Silicon Valley working on FPGA and edge AI technology. The internship threw me into a pretty technical environment fast. I have been writing Python scripts, building data visualizations, navigating Linux systems, and doing market research on competitive positioning in the semiconductor space. It has been a steep learning curve but honestly one of the best things that could have happened for my skill set.</p>
+        <p>The stock screener came directly out of that shift. I used a live market data API, built the filtering and scoring logic, and hosted the whole thing on my own domain. It pulls real prices automatically so anyone who visits never has to set anything up themselves. A few months ago I genuinely would not have known where to even begin with any of that.</p>
 
-        <h2>4. Comparing Companies Against the Market</h2>
-        <p>Another important component of my methodology is benchmarking. A stock should not necessarily be evaluated in isolation — investors can learn more by comparing a company with its competitors and with a broader market benchmark.</p>
-        <p>For my screening process, the S&P 500 provides an important reference point. If a company demonstrates stronger growth, profitability, or other fundamental characteristics than the broader market, that can make it worthy of further investigation. This does not automatically mean the company will outperform the S&P 500. Instead, it helps answer a more useful question:</p>
-        <blockquote><strong>Does this company have characteristics that differentiate it from the broader market?</strong></blockquote>
+        <h2>What the screener is not</h2>
+        <p>This is probably the most important part of the whole post.</p>
+        <p>A screener is not a buy recommendation. It is not financial advice. A high composite score does not mean the stock is going up. A low score does not mean it is going down. Markets are way more complicated than any ten-metric formula.</p>
+        <p>What the screener does is narrow the field. It takes a huge universe of possibilities and gives you back a manageable shortlist of companies that look interesting across multiple dimensions at the same time. From there the real work starts. You read the earnings reports. You understand the actual business. You look at the competitive landscape. You ask whether the growth is sustainable and whether the valuation makes sense given the risks involved.</p>
+        <p>The score gets you to the door. You still have to walk through it yourself and do the actual research.</p>
 
-        <h2>5. Turning Multiple Metrics Into a Ranking</h2>
-        <p>Looking at dozens of individual metrics can quickly become overwhelming. That is where a scoring system becomes useful. Rather than relying on one metric, my methodology combines multiple factors to create a more comprehensive view of each company.</p>
-        <p>The basic concept is: <strong>Fundamentals + Growth + Valuation + Market Data → Overall Screening Score</strong></p>
-        <p>Companies that score well across several categories rise toward the top of the screen. This approach helps reduce the influence of any single metric and makes it easier to compare hundreds of companies using a consistent framework.</p>
-
-        <h2>6. Automation Makes the Process Scalable</h2>
-        <p>One of the reasons I built the screener was to make stock research more efficient. Using Python and financial market data, the system can collect and process information across a large number of companies rather than requiring each company to be analyzed manually from scratch.</p>
-        <p>Automation can be particularly valuable for investors because markets contain far more information than any individual can realistically process. Instead of spending hours asking "which companies should I even research?", a screener can help narrow the list to a manageable group. The investor can then spend their time where it matters most: understanding the businesses.</p>
-
-        <h2>7. Screening Is Only the Beginning</h2>
-        <p>A stock screener should <strong>never</strong> be treated as a final investment decision. Quantitative data can identify interesting companies, but numbers cannot fully explain a business. Once a company passes the screen, the next step is deeper research.</p>
-        <p>That may include examining the company's competitive advantages, management quality, industry dynamics, future growth opportunities, balance-sheet risks, recent earnings reports, cash-flow generation, capital allocation, and long-term valuation.</p>
-        <p>This second stage is where quantitative screening meets fundamental analysis. The screener answers <strong>"Which companies should I investigate?"</strong> Fundamental research attempts to answer <strong>"Is this company actually worth investing in?"</strong> Those are two very different questions.</p>
-
-        <h2>8. Avoiding the "One Number" Mentality</h2>
-        <p>One of the biggest lessons I've learned from building a screening process is that investing rarely comes down to one number.</p>
-        <ul>
-          <li>A low P/E ratio does not automatically mean a stock is cheap.</li>
-          <li>High revenue growth does not automatically mean a company is high quality.</li>
-          <li>Strong recent performance does not guarantee future returns.</li>
-          <li>And a high screening score does not guarantee that a stock will outperform.</li>
-        </ul>
-        <p>Instead, the value of a systematic process comes from looking at <strong>multiple pieces of evidence together</strong>. The more independent factors that support an investment thesis, the stronger the foundation for further research.</p>
-
-        <h2>The Bigger Picture</h2>
-        <p>My stock-screening methodology is ultimately about making the research process more disciplined. Investors are constantly exposed to headlines, social-media opinions, market predictions, and short-term price movements. A quantitative screening process provides a way to step back and evaluate companies using consistent criteria.</p>
-        <p>It doesn't eliminate uncertainty. It doesn't predict the future. And it certainly doesn't guarantee returns. What it does is create a repeatable process for finding companies that may deserve more attention.</p>
-        <blockquote><strong>Screen first. Research second. Invest with conviction only after understanding what you own.</strong><br>That is the philosophy behind my stock screener.</blockquote>
+        <h2>Why I think this matters as a finance student</h2>
+        <p>A lot of finance education is pretty theoretical. The models are clean, the assumptions are spelled out clearly, and the answer is usually somewhere in the textbook. But markets do not work that way at all.</p>
+        <p>Building the screener forced me to make actual decisions. Which metrics matter more for a growth company versus a mature dividend payer. When a high P/E is justified and when it is just hype. How to think about risk as an actual number rather than just a concept you discuss in class.</p>
+        <p>Those judgment calls do not show up on a multiple choice exam, but they are exactly what matters when you are managing real money or sitting across from a client in a commercial bank trying to explain why one company is a better credit risk than another.</p>
+        <p>I am still learning a lot. I am a rising sophomore, not a portfolio manager. But I genuinely think building things is one of the fastest ways to develop real understanding, and this project has taught me more about financial analysis than almost anything else I have done since starting at SCU.</p>
+        <p>If you want to see what the screener actually does, click over to the Screener tab and try it out. Filter by sector, adjust your risk tolerance, and see which companies rise to the top. And if something in the methodology does not make sense or seems off, I am always open to feedback.</p>
+        <blockquote><strong>Screen first. Research second. Invest with conviction only after you actually understand what you own.</strong></blockquote>
       </div>
     </div>
   </div>
